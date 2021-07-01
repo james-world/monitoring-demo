@@ -13,8 +13,8 @@ Includes:
 
 Prerequisits:
 
-- To run the load tests, jmeter should be installed
-- To use the `SampleApiCalls.rest` to send manual requests, include the Visual Studio Code `REST Client` plugin.
+- To run the load tests, jmeter should be installed (chocolatey: `cinst jmeter`)
+- To use the `SampleApiCalls.rest` to send manual requests, include the Visual Studio Code `REST Client` plugin (id: `humao.rest-client`)
 - Docker is installed
 
 Running the demo:
