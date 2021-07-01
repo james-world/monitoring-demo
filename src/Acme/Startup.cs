@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Prometheus;
 
 namespace Acme
 {
@@ -44,15 +45,15 @@ namespace Acme
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Acme v1"));
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
+            app.UseHttpMetrics();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapMetrics();
             });
         }
     }
